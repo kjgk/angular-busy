@@ -115,8 +115,16 @@ angular.module('cgBusy').factory('_cgBusyTrackerFactory',['$timeout','$q',functi
 
 angular.module('cgBusy').value('cgBusyDefaults',{});
 
-angular.module('cgBusy').directive('cgBusy',['$compile','$templateCache','cgBusyDefaults','$http','_cgBusyTrackerFactory',
-    function($compile,$templateCache,cgBusyDefaults,$http,_cgBusyTrackerFactory){
+angular.module('cgBusy').factory('cgBusyMessage', function () {
+    var message = '';
+    return {
+        getMessage: function(){return message},
+        setMessage: function(msg){message = msg}
+    }
+});
+
+angular.module('cgBusy').directive('cgBusy',['$compile','$templateCache','cgBusyDefaults','cgBusyMessage','$http','_cgBusyTrackerFactory',
+    function($compile,$templateCache,cgBusyDefaults,cgBusyMessage,$http,_cgBusyTrackerFactory){
         return {
             restrict: 'A',
             link: function(scope, element, attrs, fn) {
@@ -159,7 +167,7 @@ angular.module('cgBusy').directive('cgBusy',['$compile','$templateCache','cgBusy
                         options = {promise:options};
                     }
 
-                    options = angular.extend(angular.copy(defaults),options);
+                    options = angular.extend(angular.copy(defaults), angular.extend({message: cgBusyMessage.getMessage()}, options));
 
                     if (!options.templateUrl){
                         options.templateUrl = defaults.templateUrl;
