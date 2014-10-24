@@ -1,6 +1,6 @@
 {
   "name": "kjgk-angular-busy",
-  "version": "1.0.0",
+  "version": "4.1.2",
   "main": [
     "dist/angular-busy.js",
     "dist/angular-busy.css"
