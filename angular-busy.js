@@ -122,10 +122,10 @@ angular.module('cgBusy').directive('cgBusy',['$compile','$templateCache','cgBusy
             link: function(scope, element, attrs, fn) {
 
                 //Apply position:relative to parent element if necessary
-                var position = element.css('position');
-                if (position === 'static' || position === '' || typeof position === 'undefined'){
-                    element.css('position','relative');
-                }
+                // var position = element.css('position');
+                // if (position === 'static' || position === '' || typeof position === 'undefined'){
+                    // element.css('position','relative');
+                // }
 
                 var templateElement;
                 var backdropElement;
