@@ -122,10 +122,10 @@ angular.module('cgBusy').directive('cgBusy',['$compile','$templateCache','cgBusy
             link: function(scope, element, attrs, fn) {
 
                 //Apply position:relative to parent element if necessary
-                var position = element.css('position');
-                if (position === 'static' || position === '' || typeof position === 'undefined'){
-                    element.css('position','relative');
-                }
+                // var position = element.css('position');
+                // if (position === 'static' || position === '' || typeof position === 'undefined'){
+                    // element.css('position','relative');
+                // }
 
                 var templateElement;
                 var backdropElement;
@@ -243,28 +243,51 @@ angular.module('cgBusy').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('angular-busy.html',
-    "<div class=\"cg-busy-default-wrapper\">\n" +
+    "<div class=\"cg-busy-default-wrapper\">\r" +
     "\n" +
-    "   <div class=\"cg-busy-default-sign\">\n" +
+    "\r" +
     "\n" +
-    "      <div class=\"cg-busy-default-spinner\">\n" +
-    "         <div class=\"bar1\"></div>\n" +
-    "         <div class=\"bar2\"></div>\n" +
-    "         <div class=\"bar3\"></div>\n" +
-    "         <div class=\"bar4\"></div>\n" +
-    "         <div class=\"bar5\"></div>\n" +
-    "         <div class=\"bar6\"></div>\n" +
-    "         <div class=\"bar7\"></div>\n" +
-    "         <div class=\"bar8\"></div>\n" +
-    "         <div class=\"bar9\"></div>\n" +
-    "         <div class=\"bar10\"></div>\n" +
-    "         <div class=\"bar11\"></div>\n" +
-    "         <div class=\"bar12\"></div>\n" +
-    "      </div>\n" +
+    "   <div class=\"cg-busy-default-sign\">\r" +
     "\n" +
-    "      <div class=\"cg-busy-default-text\">{{$message}}</div>\n" +
+    "\r" +
     "\n" +
-    "   </div>\n" +
+    "      <div class=\"cg-busy-default-spinner\">\r" +
+    "\n" +
+    "         <div class=\"bar1\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar2\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar3\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar4\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar5\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar6\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar7\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar8\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar9\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar10\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar11\"></div>\r" +
+    "\n" +
+    "         <div class=\"bar12\"></div>\r" +
+    "\n" +
+    "      </div>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "      <div class=\"cg-busy-default-text\">{{$message}}</div>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "   </div>\r" +
+    "\n" +
+    "\r" +
     "\n" +
     "</div>"
   );
